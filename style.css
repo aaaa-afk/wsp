@@ -1,0 +1,487 @@
+/* Global Styles */
+:root {
+    --bg-color: #0b0b0f;
+    --main-color: #c00030;
+    --sub-color: #6a5acd;
+    --discord-color: #5865F2;
+    --text-color: #ffffff;
+    --text-muted: #aaaaaa;
+    --card-bg: #1a1a22;
+    --font-primary: 'Montserrat', sans-serif;
+    --font-display: 'Orbitron', sans-serif;
+    --font-jp: 'Noto Sans JP', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-primary);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* Header */
+.site-header {
+    background-color: rgba(11, 11, 15, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo-container .logo {
+    height: 45px;
+    width: auto;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+.main-nav a {
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--main-color);
+}
+
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 70px;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 11, 15, 0.4), var(--bg-color));
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+    text-shadow: 0 0 30px rgba(192, 0, 48, 0.5);
+}
+
+.hero-subtitle {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-family: var(--font-display);
+    font-weight: 700;
+}
+
+.hero-subtext {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    font-family: var(--font-primary);
+}
+
+/* Discord Join Button */
+.discord-join {
+    text-align: center;
+    margin: 40px 0;
+    padding: 0 2rem;
+}
+
+.discord-btn {
+    display: inline-block;
+    padding: 14px 32px;
+    background: var(--discord-color);
+    color: #fff;
+    font-weight: bold;
+    font-family: var(--font-display);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-btn:hover {
+    background: #4752c4;
+    box-shadow: 0 0 20px rgba(88, 101, 242, 0.4);
+}
+
+/* Section Common */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(to right, var(--main-color), var(--sub-color));
+    margin: 0.5rem auto 0;
+}
+
+/* Events Section - YouTube Fix v4 */
+.events-section {
+    padding: 5rem 2rem;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* v4: No overflow, no transform on parent */
+.video-wrapper {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    display: block;
+}
+
+/* How to Join Section */
+.join-section {
+    padding: 5rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.join-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.join-intro h3 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+}
+
+.join-block {
+    margin-bottom: 1.5rem;
+}
+
+.join-block h4 {
+    color: var(--main-color);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stage-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stage-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-left: 3px solid var(--sub-color);
+    border-radius: 10px;
+}
+
+.stage-card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.stage-details {
+    list-style: disc;
+    margin-left: 1.5rem;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.pass-condition {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.join-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 3rem;
+}
+
+/* Official Channel Section */
+.channel-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    background: linear-gradient(to bottom, var(--bg-color), #050508);
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: 2px solid var(--main-color);
+    background: transparent;
+    color: var(--text-color);
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--main-color);
+    box-shadow: 0 0 20px rgba(192, 0, 48, 0.6);
+}
+
+/* Members Page */
+.members-section {
+    padding-top: 100px;
+    min-height: 100vh;
+    padding-bottom: 5rem;
+    position: relative;
+}
+
+.members-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    filter: brightness(0.3);
+}
+
+.members-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(11, 11, 15, 0.7), rgba(11, 11, 15, 0.95));
+    z-index: -1;
+}
+
+.members-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 4rem;
+    color: var(--text-color);
+    text-shadow: 0 0 15px rgba(106, 90, 205, 0.5);
+}
+
+.role-group {
+    margin-bottom: 4rem;
+}
+
+.role-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+}
+
+.role-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    margin-top: 0.5rem;
+}
+
+.leader-group .role-badge {
+    color: var(--main-color);
+    border-color: rgba(192, 0, 48, 0.3);
+}
+
+.subleader-group .role-badge {
+    color: var(--sub-color);
+    border-color: rgba(106, 90, 205, 0.3);
+}
+
+/* Member Grid - v4 Card Design */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.member-card {
+    background: var(--card-bg);
+    padding: 14px;
+    text-align: center;
+    border-radius: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.member-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.member-card.leader {
+    border: 2px solid var(--main-color);
+}
+
+.member-card.subleader {
+    border: 2px solid var(--sub-color);
+}
+
+.member-card.member {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.member-name {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.member-role {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-family: var(--font-display);
+}
+
+/* Footer */
+.site-footer {
+    padding: 2rem;
+    text-align: center;
+    background-color: #050508;
+    color: #555;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .site-header {
+        padding: 1rem;
+        flex-direction: column;
+    }
+
+    .logo-container {
+        margin-bottom: 1rem;
+    }
+
+    .main-nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-section {
+        margin-top: 120px;
+        height: auto;
+        min-height: 50vh;
+        padding: 3rem 1rem;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .video-grid,
+    .stage-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+}
